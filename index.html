@@ -1,1 +1,195 @@
+<!DOCTYPE html> 
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Love Story</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Indie+Flower&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #8b0000, #ff3c3c);
+      color: white;
+      font-family: 'Indie Flower', cursive;
+      text-align: center;
+      overflow-x: hidden;
+      transition: background 0.5s, color 0.5s;
+    }
+    body.dark { background: black; color: white; }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3em;
+      margin-top: 20px;
+    }
+    .reasons {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      margin: 30px auto;
+      width: 90%;
+      max-width: 700px;
+      border-radius: 20px;
+      box-shadow: 0 0 10px white;
+    }
+    .reasons h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .reasons ol {
+      text-align: left;
+      font-size: 1.2em;
+      padding: 0 20px;
+    }
+    .hearts, .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .heart, .star {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: pink;
+      clip-path: polygon(50% 0%, 100% 30%, 80% 100%, 50% 80%, 20% 100%, 0% 30%);
+      animation: float 10s infinite ease-in-out;
+      opacity: 0.7;
+    }
+    .star {
+      background: yellow;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+    @keyframes float {
+      0% { transform: translateY(100vh) translateX(0); }
+      100% { transform: translateY(-10vh) translateX(30px); }
+    }
+    #controls {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 10;
+    }
+    .music-button {
+      padding: 10px 15px;
+      background: white;
+      color: #8b0000;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    #musica-info {
+      position: fixed;
+      bottom: 80px;
+      left: 20px;
+      color: white;
+      font-size: 0.9em;
+      z-index: 10;
+    }
+    a.carta-link, .contador {
+      display: block;
+      margin: 40px auto;
+      color: white;
+      font-size: 1.2em;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+    .depoimentos {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      margin: 30px auto;
+      width: 90%;
+      max-width: 700px;
+      border-radius: 15px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body onclick="criaCora(event)">
+  <audio id="musica" loop>
+    <source src="musica.mp3" type="audio/mpeg">
+  </audio>
+
+  <div id="controls">
+    <button id="botao-musica" class="music-button" onclick="toggleMusica()">▶️ Tocar Música</button>
+    <button class="music-button" onclick="document.body.classList.toggle('dark')">🌓 Alternar Tema</button>
+  </div>
+
+  <div id="musica-info">📻 Tocando: Sua música especial</div>
+
+  <h1>Our Love Story</h1>
+
+  <div class="reasons">
+    <h2>20 Motivos pelos quais eu te amo</h2>
+    <ol>
+      <li>Seu sorriso</li><li>Seus olhos</li><li>Seu abraço</li><li>Seu jeito de me fazer rir</li><li>Seu carinho</li>
+      <li>Sua personalidade</li><li>Sua atenção</li><li>Sua companhia</li><li>Suas graças</li><li>Seu jeitinho</li>
+      <li>Seu beijo</li><li>Sua voz</li><li>Como me olha</li><li>Seu toque</li><li>Como cuida de mim</li>
+      <li>Seu cabelo</li><li>Seu jeitinho de agir</li><li>Como me trata</li><li>Como me ama</li><li>Porque é você!</li>
+    </ol>
+  </div>
+
+  <a href="carta.html" class="carta-link">💌 Leia minha carta para você</a>
+
+  <div class="contador" id="contador"></div>
+
+  <div class="depoimentos">
+    “Você foi a melhor coincidência que já me aconteceu.”<br>
+    “Cada detalhe seu me faz ter certeza que encontrei meu amor.”<br>
+    “Amar você é como respirar: não dá pra viver sem.”<br>
+    “Desde 24 de fevereiro de 2026, minha vida mudou ao te conhecer.”
+  </div>
+
+  <div class="hearts"></div>
+  <div class="stars"></div>
+
+  <script>
+    const audio = document.getElementById('musica');
+    const botao = document.getElementById('botao-musica');
+    function toggleMusica() {
+      if (audio.paused) {
+        audio.play();
+        botao.textContent = '⏸️ Pausar Música';
+      } else {
+        audio.pause();
+        botao.textContent = '▶️ Tocar Música';
+      }
+    }
+
+    function criaCora(event) {
+      const cora = document.createElement('div');
+      cora.classList.add('heart');
+      cora.style.left = event.clientX + 'px';
+      cora.style.top = event.clientY + 'px';
+      document.body.appendChild(cora);
+      setTimeout(() => cora.remove(), 1000);
+    }
+
+    function addEstrelas() {
+      for (let i = 0; i < 40; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.animationDuration = 5 + Math.random() * 5 + 's';
+        document.querySelector('.stars').appendChild(star);
+      }
+    }
+    addEstrelas();
+
+const inicio = new Date('2026-02-24');
+const hoje = new Date();
+const dias = Math.floor((hoje - inicio) / (1000 * 60 * 60 * 24));
+document.getElementById('contador').textContent = `📆 Estamos juntos há ${dias} dias de puro amor ❤️`;
+  </script>
+</body>
+</html>
 
