@@ -3,7 +3,7 @@ body{
 margin:0;
 font-family:Georgia;
 text-align:center;
-transition:0.5s;
+transition:0.4s;
 
 }
 
@@ -17,28 +17,15 @@ padding:40px;
 
 .photo{
 
-width:200px;
-border-radius:10px;
-filter:contrast(120%) brightness(90%);
+width:220px;
+border-radius:12px;
 
 }
 
-h1{
-
-font-size:40px;
-
-}
-
-.subtitle{
-
-font-style:italic;
-
-}
-
-.btn{
+.buttons a{
 
 display:inline-block;
-margin-top:30px;
+margin:10px;
 padding:15px 25px;
 background:black;
 color:white;
@@ -47,31 +34,11 @@ border-radius:8px;
 
 }
 
-#timer{
-
-margin-top:30px;
-font-size:20px;
-
-}
-
-button{
+.top-buttons{
 
 position:fixed;
-top:20px;
-padding:10px;
-cursor:pointer;
-
-}
-
-#themeToggle{
-
-right:20px;
-
-}
-
-#musicBtn{
-
-left:20px;
+top:10px;
+left:10px;
 
 }
 
@@ -79,7 +46,7 @@ left:20px;
 
 body.goth{
 
-background:#000;
+background:black;
 color:#eee;
 
 }
@@ -89,99 +56,19 @@ color:#eee;
 body.red{
 
 background:#2a0000;
-color:#fff;
-
-}body{
-
-margin:0;
-font-family:Georgia;
-text-align:center;
-transition:0.5s;
-
-}
-
-.container{
-
-max-width:700px;
-margin:auto;
-padding:40px;
-
-}
-
-.photo{
-
-width:200px;
-border-radius:10px;
-filter:contrast(120%) brightness(90%);
-
-}
-
-h1{
-
-font-size:40px;
-
-}
-
-.subtitle{
-
-font-style:italic;
-
-}
-
-.btn{
-
-display:inline-block;
-margin-top:30px;
-padding:15px 25px;
-background:black;
 color:white;
-text-decoration:none;
-border-radius:8px;
 
 }
 
-#timer{
+ul{
 
-margin-top:30px;
-font-size:20px;
-
-}
-
-button{
-
-position:fixed;
-top:20px;
-padding:10px;
-cursor:pointer;
+list-style:none;
+padding:0;
 
 }
 
-#themeToggle{
+li{
 
-right:20px;
-
-}
-
-#musicBtn{
-
-left:20px;
-
-}
-
-/* tema gótico */
-
-body.goth{
-
-background:#000;
-color:#eee;
-
-}
-
-/* tema vermelho */
-
-body.red{
-
-background:#2a0000;
-color:#fff;
+margin:10px;
 
 }
