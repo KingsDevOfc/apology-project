@@ -1,77 +1,130 @@
-body{
-margin:0;
-background:black;
-color:white;
-font-family:Arial, sans-serif;
-text-align:center;
-overflow-x:hidden;
+const canvas = document.getElementById("stars")
+const ctx = canvas.getContext("2d")
+
+canvas.width=window.innerWidth
+canvas.height=window.innerHeight
+
+let stars=[]
+
+for(let i=0;i<300;i++){
+
+stars.push({
+
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+size:Math.random()*2,
+speed:Math.random()*0.5
+
+})
+
 }
 
-canvas{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-z-index:-1;
+function draw(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height)
+
+ctx.fillStyle="white"
+
+stars.forEach(star=>{
+
+star.y+=star.speed
+
+if(star.y>canvas.height) star.y=0
+
+ctx.beginPath()
+ctx.arc(star.x,star.y,star.size,0,Math.PI*2)
+ctx.fill()
+
+})
+
+requestAnimationFrame(draw)
+
 }
 
-.intro{
-margin-top:200px;
+draw()const canvas = document.getElementById("stars")
+const ctx = canvas.getContext("2d")
+
+canvas.width=window.innerWidth
+canvas.height=window.innerHeight
+
+let stars=[]
+
+for(let i=0;i<300;i++){
+
+stars.push({
+
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+size:Math.random()*2,
+speed:Math.random()*0.5
+
+})
+
 }
 
-button{
-padding:15px 30px;
-font-size:18px;
-border-radius:30px;
-border:none;
-cursor:pointer;
+function draw(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height)
+
+ctx.fillStyle="white"
+
+stars.forEach(star=>{
+
+star.y+=star.speed
+
+if(star.y>canvas.height) star.y=0
+
+ctx.beginPath()
+ctx.arc(star.x,star.y,star.size,0,Math.PI*2)
+ctx.fill()
+
+})
+
+requestAnimationFrame(draw)
+
 }
 
-.hidden{
-display:none;
+draw()const canvas = document.getElementById("stars")
+const ctx = canvas.getContext("2d")
+
+canvas.width=window.innerWidth
+canvas.height=window.innerHeight
+
+let stars=[]
+
+for(let i=0;i<300;i++){
+
+stars.push({
+
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+size:Math.random()*2,
+speed:Math.random()*0.5
+
+})
+
 }
 
-.timeline{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-margin-top:40px;
+function draw(){
+
+ctx.clearRect(0,0,canvas.width,canvas.height)
+
+ctx.fillStyle="white"
+
+stars.forEach(star=>{
+
+star.y+=star.speed
+
+if(star.y>canvas.height) star.y=0
+
+ctx.beginPath()
+ctx.arc(star.x,star.y,star.size,0,Math.PI*2)
+ctx.fill()
+
+})
+
+requestAnimationFrame(draw)
+
 }
 
-.card{
-background:rgba(255,255,255,0.1);
-padding:20px;
-margin:20px;
-border-radius:15px;
-width:260px;
-}
-
-.text{
-max-width:700px;
-margin:auto;
-margin-top:20px;
-}
-
-ul{
-list-style:none;
-padding:0;
-}
-
-ul li{
-margin:10px;
-}
-
-.counter{
-margin-top:80px;
-}
-
-.letter{
-margin-top:100px;
-font-size:20px;
-max-width:800px;
-margin-left:auto;
-margin-right:auto;
-margin-bottom:200px;
-line-height:1.6;
-}
+draw()
