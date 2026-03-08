@@ -1,7 +1,6 @@
 const music = document.getElementById("music")
-const musicBtn = document.getElementById("musicBtn")
 
-musicBtn.onclick = () => {
+function toggleMusic(){
 
 if(music.paused){
 
@@ -15,17 +14,17 @@ music.pause()
 
 }
 
-
-const startDate = new Date("2026-02-27")
+const startDate = new Date("2026-02-24")
 
 setInterval(()=>{
 
-let now = new Date()
-let diff = now - startDate
+const now = new Date()
 
-let days = Math.floor(diff/(1000*60*60*24))
+const diff = now - startDate
+
+const days = Math.floor(diff/(1000*60*60*24))
 
 document.getElementById("timer").innerText =
-days+" dias desde que nos conhecemos"
+days + " dias desde que nos conhecemos"
 
 },1000)
