@@ -1,6 +1,3 @@
 # 🌌 The Apology Project
 
-Um site criado como pedido de desculpas.
-
-Algumas histórias merecem
-pelo menos uma última tentativa.
+Um site criado como um ultimo ato de demonstrar amor a pessoa que ama.
